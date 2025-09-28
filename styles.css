@@ -1,5 +1,58 @@
-body {
-    background-color: #f5f5dc;
+* {
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+header, section, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    
+}
+
+header {
+    background: red;
+    position: sticky;
+    height: 10vh;
+    top: 0;
+}
+
+section:nth-child(1) {
+    height: 100vh;
+    background-image: url("https://images.pexels.com/photos/1939485/pexels-photo-1939485.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section:nth-child(2) {
+    height: 100vh;
+    background: orange;
+}
+
+section:nth-child(3) {
+    height: 100vh;
+}
+
+footer {
+    height: 10vh;
+    background: black;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
 }
 
 img { 
