@@ -7,23 +7,33 @@ body {
 header {
     background-color: #4CAF50; /* verde */
     color: white;
-    text-align: center;
-    padding: 15px 0;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    
+    padding: 10px;
 }
 
 header h1 {
+    display: flex;
+    justify-content: space-between;
+    
     margin: 0;
 }
 
 nav {
-    background-color: #333;
-    padding: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 nav a {
-    color: white;
+    padding: 10px 20px;
+    background-color: #333;
     text-decoration: none;
-    margin: 0 15px;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 2px 3px 3px #333;
     font-weight: bold;
 }
 
@@ -45,4 +55,23 @@ footer {
     text-align: center;
     padding: 10px;
     margin-top: 20px;
+}
+
+.cidade {
+  display: none;
+}
+
+@media (max-width: 600px) {
+    header, nav {
+    flex-direction: column;
+  }
+  nav {
+    display: none;
+  }
+  header:hover nav {
+    display: flex;
+  }
+   .cidade {
+    display: block;
+  }
 }
