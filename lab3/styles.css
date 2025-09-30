@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    background-color: #4CAF50; /* verde */
+    background-color: #af4c4c; /* verde */
     color: white;
 
     display: flex;
@@ -65,6 +65,8 @@ footer {
   display: flex;
   gap: 10px;
 }
+
+
 
 @media (max-width: 600px) {
     header, nav {

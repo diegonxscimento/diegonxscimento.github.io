@@ -13,19 +13,35 @@
                 flex-wrap: wrap;
             }
             .fotografia img {
-                width: 150px;
+                width: 200px;
                 padding: 10px;
+                transition: width 1s;
                 border-radius: 20px;
             }
 
-            .poesia p:nth-child {
+            .fotografia img:hover {
+                width: 400px;
+            }
+
+            #poesia p:nth-child {
                 color: brown
+            }
+
+            .fotografiaEmblematica {
+                position:relative;
+            }
+            .texto {
+                position:absolute;
+                color: white;
+                font-weight: bold;
+                top: 10px;
+                left: 10px;
             }
         </style>
     </head>
     <body>
         <header>
-            <h1><span>A minha cidade</span> <span class="cidade">&#9776;</span> </h1>
+            <h1><span>Tokyo</span> <span class="cidade">&#9776;</span> </h1>
             <nav>
             <a href="index.html">Home</a>
             <a href="local.html">Localização</a>
@@ -40,6 +56,10 @@
                 <a href="#video">Vídeo</a>
                 <a href="#poema">Poema</a>
             </p>
+            <section class="fotografiaEmblematica">
+                <img src="https://cdn.pixabay.com/photo/2017/03/12/21/30/tokyo-2138168_1280.jpg" width="100%">
+                <div class="texto">Paisagem Noturna</div>
+            </section>
             <section>
                 <h3 id="fotografias">Fotografias</h3>
                 <div class="fotografia">
@@ -56,11 +76,11 @@
             <section>
                 <h3 id="video">Vídeo</h3>
                 <p>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/N1MB6gFbFVY?si=3qxAC_HXDi49kH11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="1000" height="500" src="https://www.youtube.com/embed/N1MB6gFbFVY?si=3qxAC_HXDi49kH11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </p>
             </section>
-            <section>
-                <h3 id="poema">Poesia</h3>
+            <section id="poema">
+                <h3>Poesia</h3>
                 <div>
                     <p>Nas luzes que nunca dormem,</p>
                     <p>Tokyo desperta em cor,</p>
