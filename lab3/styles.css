@@ -61,6 +61,11 @@ footer {
   display: none;
 }
 
+.flex-container{
+  display: flex;
+  gap: 10px;
+}
+
 @media (max-width: 600px) {
     header, nav {
     flex-direction: column;
@@ -73,5 +78,10 @@ footer {
   }
    .cidade {
     display: block;
+  }
+
+  .flex-container {
+    display:flex;
+    flex-direction: column;
   }
 }
