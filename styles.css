@@ -18,7 +18,7 @@ header {
     top: 0;
 }
 
-#inicio {
+.hero {
     height: 100vh;
     background-image: url("https://media.istockphoto.com/id/876560704/pt/foto/fuji-japan-in-spring.jpg?s=612x612&w=0&k=20&c=aN5Cwdl3dSlNKXMcTbHONid4JlUaXCeJHIx6GDJU_zE=");
     background-repeat: no-repeat;
@@ -30,12 +30,12 @@ header {
     align-items: center;
 }
 
-#inicio nav {
+.hero nav {
   justify-content: flex-end;
   align-items: flex-start;
 }
 
-#inicio h1 {
+.hero h1 {
     display: flex;
   justify-content: center;
   align-items: center;

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos HTML</title>
+    <link rel="stylesheet" href="/lab4/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>JavaScript</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. Cuidado ao passares aqui o rato ⚠️</h2>
+      <p id="hoverArea" onmouseover="entra()" onmouseout="sai()">
+        ⚠️ CUIDADO ⚠️
+      </p>
+    </section>
+
+    <section>
+      <h2>2. Muda a cor!</h2>
+      <button onclick="mudaCor('red')">Vermelho</button>
+      <button onclick="mudaCor('green')">Verde</button>
+      <button onclick="mudaCor('blue')">Azul</button>
+    </section>
+
+    <section>
+      <h2>3. Experimenta clicar 1x na imagem e depois 2x!</h2>
+      <img id="gato" src="images/gato bebe.jpg"
+           alt="Gatinho fofo"
+           onclick="mudaImagem()"
+           ondblclick="voltaImagem()">
+    </section>
+
+    <section>
+      <h2>4. Contador de cliques 🧮</h2>
+      <button id="btnConta" onclick="conta()">Conta!</button>
+      <span id="valor">0</span>
+    </section>
+
+    <section>
+      <h2>5. Coordenadas do Rato (Para ele não fugir!)</h2>
+      <p id="coords" onmousemove="segueRato(event)">x: 0, y: 0</p>
+    </section>
+    <script src="scripts/main.js"></script>
+  </main>
+
+  <footer>
+  </footer>
+
+</body>
+</html>
