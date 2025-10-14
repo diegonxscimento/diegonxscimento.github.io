@@ -4,15 +4,17 @@
     margin: 0;
 }
 
-header, footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+header, footer, section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vh;
 }
 
 
 header {
-    background: #5195d4;
+    background: #0a2426;
+    color: white;
     position: sticky;
     height: 10vh;
     top: 0;
@@ -20,30 +22,23 @@ header {
 
 .hero {
     height: 100vh;
-    background-image: url("https://media.istockphoto.com/id/876560704/pt/foto/fuji-japan-in-spring.jpg?s=612x612&w=0&k=20&c=aN5Cwdl3dSlNKXMcTbHONid4JlUaXCeJHIx6GDJU_zE=");
-    background-repeat: no-repeat;
+    background-image: url('images/fundo2.jpg');
+    background-position: center;
     background-size: cover;
     background-attachment: fixed;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.hero nav {
-  justify-content: flex-end;
-  align-items: flex-start;
+.texto-hero {
+    position: absolute;
+    top: 55%;
+    font: bold 30px sans-serif;
 }
 
-.hero h1 {
-    display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 #projetos {
     height: 100vh;
-    background: rgb(255, 215, 162);
+    background: #9fb8c2;
 }
 
 #projetos nav {
@@ -79,7 +74,7 @@ section:nth-child(3) {
 footer {
     height: 10vh;
     background: black;
-    color: white;
+    color: #ffffff;
 }
 
 nav ul {
