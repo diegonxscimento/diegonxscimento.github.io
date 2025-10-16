@@ -4,7 +4,7 @@ body {
   text-align: center;
 }
 
-header, footer {
+header {
   background-color: #ddd;
   padding: 10px;
 }

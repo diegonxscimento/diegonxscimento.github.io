@@ -9,6 +9,7 @@ header, footer, section {
   justify-content: center;
   align-items: center;
   font-size: 2vh;
+  height: 100vh;
 }
 
 
@@ -30,9 +31,30 @@ header {
 
 .texto-hero {
     position: absolute;
-    top: 55%;
+    top: 50%;
     font: bold 30px sans-serif;
 }
+
+
+.projetos-hero {
+  padding: 12px 32px;
+  background-color: #9fb8c2;
+  color: #fff;
+  font-size: 40px;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: background 1s;
+  text-decoration: none;
+}
+
+
+#menu-hero {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    margin: 10px;
+}
+
 
 
 
@@ -65,11 +87,10 @@ header {
     box-shadow: 5px 5px 15px grey;
 }
 
-
-
-section:nth-child(3) {
-    height: 100vh;
+#cadeira {
+    background: #d4dbda;
 }
+
 
 footer {
     height: 10vh;
