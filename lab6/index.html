@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loja</title>
+  <link rel="stylesheet" href="/lab6/css/style.css" />
+</head>
+<body>
+  <header class="topo">
+    <h1>Loja</h1>
+
+    <nav aria-label="Secções do site">
+      <ul class="menu">
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#cesto">Cesto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="produtos" aria-labelledby="tit-produtos">
+      <h2 id="tit-produtos">Selecione os seus Produtos</h2>
+
+      <section id="lista-produtos" class="grade-produtos" aria-label="Lista de produtos"></section>
+    </section>
+
+    <section id="cesto" aria-labelledby="tit-cesto">
+      <h2 id="tit-cesto">Cesto</h2>
+
+      <ul id="lista-cesto" class="lista-cesto" aria-live="polite"></ul>
+
+      <p class="total"><strong>Total:</strong> <output id="total">€0,00</output></p>
+    </section>
+  </main>
+
+  <footer>
+    
+  </footer>
+  <script src="/lab6/scripts/produtos.js"></script>
+  <script src="/lab6/scripts/main.js"></script>
+</body>
+</html>
