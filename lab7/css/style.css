@@ -1,87 +1,225 @@
-:root{
-  --azul:#8cc2ee;
-  --bg:#f6f6f8;
-  --cartao:#ffffff;
-  --borda:#e7e7e7;
+/* ================== ESTILO GERAL ================== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-*{box-sizing:border-box}
-html,body{margin:0}
-body{
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  background: var(--bg);
-  color:#1b1b1b;
-  line-height:1.5;
+header.topo {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
 }
 
-.topo{
-  background: var(--azul);
-  color:#fff;
-  padding: 14px 4%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-}
-.topo h1{margin:0;font-size:1.6rem}
-.menu{list-style:none; margin:0; padding:0; display:flex; gap:18px}
-.menu a{color:#fff; text-decoration:none; font-weight:600}
-.menu a:hover{text-decoration:underline}
+/* ================== LAYOUT PRINCIPAL (O FIX) ================== */
 
-main{padding: 24px 4%; display:grid; gap:34px}
-
-h2{margin:0 0 12px 0; font-size:1.4rem}
-
-.grade-produtos{
-  display:flex;
-  flex-wrap: wrap;
-  gap: 18px;
+main {
+    /* Esta é a parte mais importante: */
+    display: flex; /* Coloca os filhos (produtos e cesto) lado a lado */
+    flex-wrap: wrap; /* Permite que "caiam" para baixo em ecrãs pequenos */
+    padding: 20px;
+    gap: 20px; /* Espaço entre a secção de produtos e o cesto */
 }
 
-.grade-produtos article{
-  background: var(--cartao);
-  border: 1px solid var(--borda);
-  border-radius: 14px;
-  padding: 12px;
-  width: clamp(240px, 28%, 320px);  /* 3 colunas fluidas */
-  display:grid;                     /* GRID dentro do card, simples */
-  gap: 8px;
-}
-.grade-produtos article img{
-  width:100%;
-  height:180px;
-  object-fit:contain;
-}
-.grade-produtos article footer{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+/* Secção de produtos (à esquerda) */
+#produtos {
+    /* O '1' significa "ocupa todo o espaço que sobrar" */
+    flex: 1; 
+    /* Define uma largura mínima, para não ficar espremido */
+    min-width: 300px; 
 }
 
-.lista-cesto{
-  list-style:none;
-  margin:0; padding:0;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
+/* Secção do cesto (à direita) */
+#cesto {
+    /* Define uma largura fixa para a barra lateral */
+    width: 320px; 
+    flex-shrink: 0; /* Impede o cesto de encolher */
+    
+    /* Estilo da caixa do cesto */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
-.lista-cesto li,
-.lista-cesto article{
-  background: var(--cartao);
-  border:1px solid var(--borda);
-  border-radius:12px;
-  padding:10px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-}
-.total{margin-top:8px; font-size:1.05rem}
 
-.rodape{
-  background: var(--roxo);
-  color:#fff;
-  padding: 18px 4%;
-  text-align:center;
+/* ================== FILTROS (NOVO ESTILO) ================== */
+
+#filtros {
+    background-color: #eee;
+    padding: 15px 20px;
+    display: flex; /* Coloca os filtros e labels lado a lado */
+    flex-wrap: wrap; /* Permite que quebrem a linha se não couberem */
+    gap: 15px;
+    align-items: center;
 }
-.rodape img{vertical-align:middle}
+
+#filtros label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+#filtros select,
+#filtros input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* ================== LISTA DE PRODUTOS (O QUE JÁ TINHAS) ================== */
+
+#lista-produtos {
+    display: grid;
+    /* Colunas automáticas (mínimo de 250px) */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Caixa individual do produto */
+#lista-produtos article {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#lista-produtos article img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: contain; /* Não distorce a imagem */
+    margin-bottom: 10px;
+}
+
+#lista-produtos article h3 {
+    font-size: 1.1rem;
+    min-height: 3em; /* Ajuda a alinhar títulos */
+}
+
+#lista-produtos article button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#lista-produtos article button:hover {
+    background-color: #0056b3;
+}
+
+
+/* ================== ESTILOS DO CESTO (NOVO) ================== */
+
+#lista-cesto {
+    list-style: none; /* Tira as "bolinhas" */
+    padding: 0;
+    margin: 0;
+}
+
+/* Cada item no cesto */
+.cesto-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.cesto-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.cesto-info {
+    flex: 1; /* Ocupa o espaço restante */
+    font-size: 0.9rem;
+}
+
+.cesto-item button { /* Botão "Remover" */
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+.cesto-item button:hover {
+    background: #cc0000;
+}
+
+/* ================== FORMULÁRIO CHECKOUT (NOVO) ================== */
+
+#form-checkout .linha {
+    margin-bottom: 15px;
+}
+
+#form-checkout label {
+    display: block; /* Põe a label numa linha */
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+#form-checkout input[type="text"] {
+    width: 95%; /* Ocupa a largura toda (menos um pouco de padding) */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#form-checkout button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745; /* Verde para "Comprar" */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+#form-checkout button:hover {
+    background-color: #218838;
+}
+
+/* Mensagens de sucesso/erro */
+#resultado-compra {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.compra-ok {
+    background-color: #e6ffef;
+    border: 1px solid #5cb85c;
+}
+
+/* ================== RESPONSIVO (PARA TELEMÓVEIS) ================== */
+
+@media (max-width: 768px) {
+    main {
+        /* Em ecrãs pequenos, põe o cesto *por baixo* dos produtos */
+        flex-direction: column;
+    }
+
+    #cesto {
+        /* O cesto ocupa a largura toda */
+        width: 100%;
+        /* Remove a largura fixa */
+        box-sizing: border-box; /* Garante que o padding não estraga a largura */
+    }
+
+    #filtros {
+        flex-direction: column; /* Filtros empilhados */
+        align-items: stretch; /* Ocupam a largura toda */
+    }
+}

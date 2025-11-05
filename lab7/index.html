@@ -1,44 +1,76 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Loja</title>
-  <link rel="stylesheet" href="/lab6/css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja DEISI</title>
+  <link rel="stylesheet" href="/lab7/css/style.css">
 </head>
 <body>
   <header class="topo">
-    <h1>Loja</h1>
-
-    <nav aria-label="Secções do site">
-      <ul class="menu">
-        <li><a href="#produtos">Produtos</a></li>
-        <li><a href="#cesto">Cesto</a></li>
-      </ul>
-    </nav>
+    <h1>DEISI Shop</h1>
   </header>
 
+  <!-- Barra de filtros -->
+  <section id="filtros" aria-label="Filtros de produtos">
+    <label for="filtro-categoria">Filtrar:</label>
+    <select id="filtro-categoria">
+      <option value="">Todas as categorias</option>
+    </select>
+
+    <label for="ordenar">Ordenar</label>
+    <select id="ordenar">
+      <option value="">Ordenar pelo preço</option>
+      <option value="desc">Preço Decrescente</option>
+      <option value="asc">Preço Crescente</option>
+    </select>
+
+    <label for="pesquisa">Procurar</label>
+    <input id="pesquisa" type="search" placeholder="pesquise por produto">
+  </section>
+
+  <!-- Lista de produtos -->
   <main>
-
-    <section id="produtos" aria-labelledby="tit-produtos">
-      <h2 id="tit-produtos">Selecione os seus Produtos</h2>
-
-      <section id="lista-produtos" class="grade-produtos" aria-label="Lista de produtos"></section>
+    <section id="produtos">
+      <div id="lista-produtos" class="grid"></div>
     </section>
 
-    <section id="cesto" aria-labelledby="tit-cesto">
-      <h2 id="tit-cesto">Cesto</h2>
+    <!-- Cesto + Checkout -->
+    <section id="cesto">
+      <h2>Cesto</h2>
+      <ul id="lista-cesto"></ul>
+      <p><strong>Total:</strong> <span id="total">€0.00</span></p>
 
-      <ul id="lista-cesto" class="lista-cesto" aria-live="polite"></ul>
+      <hr>
 
-      <p class="total"><strong>Total:</strong> <output id="total">€0,00</output></p>
+      <h3>Checkout</h3>
+      <form id="form-checkout">
+        <div class="linha">
+          <label for="input-name">Nome</label>
+          <input id="input-name" type="text" placeholder="o seu nome" required>
+        </div>
+
+        <div class="linha">
+          <label for="chk-student">És estudante do DEISI?</label>
+          <input id="chk-student" type="checkbox">
+        </div>
+
+        <div class="linha">
+          <label for="input-coupon">Cupão de desconto</label>
+          <input id="input-coupon" type="text" placeholder="ex.: black-friday">
+        </div>
+
+        <button id="btn-comprar" type="submit">Comprar</button>
+      </form>
+
+      <div id="resultado-compra" aria-live="polite"></div>
     </section>
   </main>
 
   <footer>
-    
+    <p>&copy; <time id="ano"></time> Loja DEISI</p>
   </footer>
-  <script src="/lab6/scripts/produtos.js"></script>
-  <script src="/lab6/scripts/main.js"></script>
+
+  <script src="/lab7/scripts/main.js"></script>
 </body>
 </html>
